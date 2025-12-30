@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+}
+
+nav {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.logo {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+}
+
