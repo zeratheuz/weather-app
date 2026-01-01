@@ -24,13 +24,22 @@ img {
   height: 3rem;
 }
 
-.container {
-  background-color: slategray;
-}
-
 .logo {
   gap: 1rem;
   display: flex;
   align-items: center;
 }
 
+.search-bar #searchBar {
+  padding: .5rem 1rem;
+  width: 20rem;
+  min-width: 1rem;
+}
+
+.search-bar #searchBtn {
+  padding: .5rem 1rem;
+}
+
+.container {
+  background-color: slategray;
+}
