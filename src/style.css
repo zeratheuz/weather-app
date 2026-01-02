@@ -12,6 +12,7 @@ body {
 }
 
 nav {
+  gap: 1rem;
   width: 100%;
   padding: 1rem;
   display: flex;
@@ -30,10 +31,19 @@ img {
   align-items: center;
 }
 
+.logo h2 {
+  width: max-content;
+}
+
+.search-bar {
+  gap: 1rem;
+  display: flex;
+  max-width: 50rem;
+}
+
 .search-bar #searchBar {
   padding: .5rem 1rem;
-  width: 20rem;
-  min-width: 1rem;
+  width: clamp(1rem, 50vw, 50rem)
 }
 
 .search-bar #searchBtn {
@@ -42,4 +52,12 @@ img {
 
 .container {
   background-color: slategray;
+}
+
+@media (max-width: 700px) {
+
+  .logo h2 {
+    display: none;
+  }
+
 }
