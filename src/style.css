@@ -63,7 +63,7 @@ img {
   }
 
   .search-bar #searchBar {
-  width: clamp(1rem, 60vw, 50rem)
-}
+    width: clamp(1rem, 60vw, 50rem)
+  }
 
 }

@@ -1,5 +1,7 @@
-export async function getWeather(place) {
-  const response = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/curitiba/today?unitGroup=metric&keyy`=UBKPCGKX7RTGV7W8ACP2G2JMW")
+export async function getWeather(place = "United+States") {
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${place}/today?unitGroup=metric&key=UBKPCGKX7RTGV7W8ACP2G2JMW`
+  const response = await fetch(url)
   const weatherData = await response.json()
-  console.log(weatherData.days[0].temp)
+  const weatherToday = weatherData.days[0].temp
+  console.log(weatherToday)
 }
