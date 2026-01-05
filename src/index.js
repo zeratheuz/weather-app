@@ -1,14 +1,15 @@
 import "./style.css"
 import { getWeather } from "./getWeather.js";
+import { searchWeather } from "./searchWeather.js";
+
 getWeather()
 
-const btnSearch = document.querySelector("#searchBtn")
+const searchBar = document.querySelector("#searchBar")
+const searchBtn = document.querySelector("#searchBtn")
 
-btnSearch.addEventListener("click", () => {
-  const searchBarValue = document.querySelector("#searchBar").value.split(' ').join("+")
-  if (searchBarValue == "") {
-    getWeather()
+searchBar.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    searchWeather()
   }
-  console.log(`Searching... ${searchBarValue}`)
-  getWeather(searchBarValue)
 })
+searchBtn.addEventListener("click", () => searchWeather())
