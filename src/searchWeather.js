@@ -1,10 +1,9 @@
 import { getWeather } from "./getWeather.js";
 
-export function searchWeather() {
+export async function searchWeather() {
   const searchBarValue = document.querySelector("#searchBar").value.split(' ').join("+")
   if (searchBarValue == "") {
-    getWeather()
+    return await getWeather()
   }
-  console.log(`Searching... ${searchBarValue}`)
-  getWeather(searchBarValue)
+  return await getWeather(searchBarValue)
 } 

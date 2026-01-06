@@ -3,5 +3,5 @@ export async function getWeather(place = "United+States") {
   const response = await fetch(url)
   const weatherData = await response.json()
   const weatherToday = weatherData.days[0].temp
-  console.log(weatherToday)
+  return weatherToday
 }
