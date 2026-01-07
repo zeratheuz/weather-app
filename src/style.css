@@ -53,7 +53,9 @@ img {
 }
 
 .container {
-  background-color: slategray;
+  margin: auto;
+  color: white;
+  font-size: 10rem;
 }
 
 @media (max-width: 700px) {
