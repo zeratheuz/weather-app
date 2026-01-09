@@ -10599,11 +10599,35 @@ const object = {
 import { searchWeather } from "./searchWeather.js";
 
 export async function displayWeather() {
-  const container = document.querySelector("#container")
-  // const weatherData = await searchWeather()
-  const weatherData = object
-  console.log(object)
-  const weatherToday = weatherData.days[0].temp
+    const container = document.querySelector("#container")
+    // const weatherData = await searchWeather()
+    const weatherData = object
+    console.log(object)
 
-  container.innerHTML = weatherToday + "°C"
+    const place = document.createElement("div")
+    place.classList.add("place")
+    place.textContent = weatherData.address
+
+    const weather = document.createElement("h3")
+    weather.classList.add("weather")
+    weather.textContent = weatherData.days[0].temp + "°C"
+
+    const conditions = document.createElement("div")
+    conditions.classList.add("conditions")
+    conditions.textContent = weatherData.days[0].conditions
+
+    const feelslike = document.createElement("div")
+    feelslike.classList.add("feelslike")
+    feelslike.textContent = weatherData.days[0].feelslike
+
+    const tempMaxAndMin = document.createElement("div")
+    tempMaxAndMin.classList.add("tempMaxAndMin")
+    tempMaxAndMin.textContent = `L:${weatherData.days[0].tempmin} H:L:${weatherData.days[0].tempmax}`
+
+
+    container.appendChild(place)
+    container.appendChild(weather)
+    container.appendChild(conditions)
+    container.appendChild(feelslike)
+    container.appendChild(tempMaxAndMin)
 }
