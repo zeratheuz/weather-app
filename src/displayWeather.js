@@ -10604,25 +10604,25 @@ export async function displayWeather() {
     const weatherData = object
     console.log(object)
 
-    const place = document.createElement("div")
+    const place = document.createElement("p")
     place.classList.add("place")
     place.textContent = weatherData.address
 
-    const weather = document.createElement("h3")
+    const weather = document.createElement("p")
     weather.classList.add("weather")
-    weather.textContent = weatherData.days[0].temp + "°C"
+    weather.textContent = `${Math.round(weatherData.days[0].temp)}°`
 
-    const conditions = document.createElement("div")
+    const conditions = document.createElement("p")
     conditions.classList.add("conditions")
     conditions.textContent = weatherData.days[0].conditions
 
-    const feelslike = document.createElement("div")
+    const feelslike = document.createElement("p")
     feelslike.classList.add("feelslike")
-    feelslike.textContent = weatherData.days[0].feelslike
+    feelslike.textContent = `Feels Like: ${Math.round(weatherData.days[0].feelslike)}°`
 
-    const tempMaxAndMin = document.createElement("div")
+    const tempMaxAndMin = document.createElement("p")
     tempMaxAndMin.classList.add("tempMaxAndMin")
-    tempMaxAndMin.textContent = `L:${weatherData.days[0].tempmin} H:L:${weatherData.days[0].tempmax}`
+    tempMaxAndMin.textContent = `L: ${Math.round(weatherData.days[0].tempmin)}° H: ${Math.round(weatherData.days[0].tempmax)}°`
 
 
     container.appendChild(place)

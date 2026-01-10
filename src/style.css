@@ -53,9 +53,18 @@ img {
 }
 
 .container {
-  margin: auto;
   color: white;
   font-size: 3rem;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.place, .weather {
+  font-weight: bold;
+}
+
+.weather {
+  font-size: 5rem;
 }
 
 @media (max-width: 700px) {
