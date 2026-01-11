@@ -45,7 +45,7 @@ img {
 .search-bar #searchBar {
   font-size: 20px;
   padding: 0 1rem;
-  width: clamp(1rem, 50vw, 50rem)
+  width: clamp(1rem, 20vw, 20rem)
 }
 
 .search-bar #searchBtn {
