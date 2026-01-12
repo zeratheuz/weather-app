@@ -22,6 +22,10 @@ export async function displayWeather() {
     feelslike.classList.add("feelslike")
     feelslike.textContent = `Feels Like: ${Math.round(weatherData.days[0].feelslike)}°`
 
+    const humidity = document.createElement("p")
+    humidity.classList.add("humidity")
+    humidity.textContent = `Humidity: ${Math.round(weatherData.days[0].humidity)}%`
+
     const tempMaxAndMin = document.createElement("p")
     tempMaxAndMin.classList.add("tempMaxAndMin")
     tempMaxAndMin.textContent = `L: ${Math.round(weatherData.days[0].tempmin)}° H: ${Math.round(weatherData.days[0].tempmax)}°`
@@ -29,7 +33,8 @@ export async function displayWeather() {
 
     container.appendChild(place)
     container.appendChild(weather)
-    container.appendChild(conditions)
     container.appendChild(feelslike)
+    container.appendChild(conditions)
+    container.appendChild(humidity)
     container.appendChild(tempMaxAndMin)
 }
