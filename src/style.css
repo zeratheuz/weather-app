@@ -45,7 +45,7 @@ img {
 .search-bar #searchBar {
   font-size: 20px;
   padding: 0 1rem;
-  width: clamp(1rem, 20vw, 20rem)
+  width: clamp(1rem, 30vw, 30rem)
 }
 
 .search-bar #searchBtn {
@@ -55,11 +55,11 @@ img {
 .container {
   color: white;
   font-size: 3rem;
-  margin: 1rem auto;
+  margin: 2rem auto;
   text-align: center;
 }
 
-.place, .weather {
+.place {
   font-weight: bold;
 }
 
@@ -75,6 +75,18 @@ img {
 
   .search-bar #searchBar {
     width: clamp(1rem, 60vw, 50rem)
+  }
+
+  .container {
+    font-size: 2rem;
+  }
+
+  .place {
+    font-weight: bold;
+  }
+
+  .weather {
+    font-size: 5rem;
   }
 
 }

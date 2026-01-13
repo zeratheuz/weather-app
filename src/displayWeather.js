@@ -1,10 +1,26 @@
 import { searchWeather } from "./searchWeather.js";
 
-export async function displayWeather() {
+export async function displayWeather(unit) {
     const container = document.querySelector("#container")
     container.innerHTML = ""
-    const weatherData = await searchWeather()
+    const weatherData = await searchWeather(unit)
     console.log(weatherData)
+
+    const unitBtn = document.createElement("button")
+    if (unit == "metric") {
+        unitBtn.value = 1
+        unitBtn.textContent = "°C"
+    } else {
+        unitBtn.value = 0
+        unitBtn.textContent = "°F"
+    }
+    unitBtn.addEventListener("toggle", () => {
+        if (unitBtn.value == 1) {
+            unitBtn.textContent = "°F"
+            unitBtn.value = 0
+            displayWeather("us")
+        }
+    })
 
     const place = document.createElement("p")
     place.classList.add("place")
@@ -31,6 +47,7 @@ export async function displayWeather() {
     tempMaxAndMin.textContent = `L: ${Math.round(weatherData.days[0].tempmin)}° H: ${Math.round(weatherData.days[0].tempmax)}°`
 
 
+    container.appendChild(unitBtn)
     container.appendChild(place)
     container.appendChild(weather)
     container.appendChild(feelslike)
