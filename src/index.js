@@ -1,8 +1,7 @@
 import "./style.css"
 import { displayWeather } from "./displayWeather.js";
 
-let unit = "metric"
-displayWeather(unit)
+displayWeather()
 
 const searchBar = document.querySelector("#searchBar")
 const searchBtn = document.querySelector("#searchBtn")
@@ -12,4 +11,4 @@ searchBar.addEventListener("keydown", (e) => {
     displayWeather()
   }
 })
-searchBtn.addEventListener("click", () => displayWeather(unit))
+searchBtn.addEventListener("click", () => displayWeather())

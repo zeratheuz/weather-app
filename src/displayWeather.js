@@ -1,24 +1,27 @@
 import { searchWeather } from "./searchWeather.js";
 
-export async function displayWeather(unit) {
+export async function displayWeather(unit = "metric") {
     const container = document.querySelector("#container")
     container.innerHTML = ""
     const weatherData = await searchWeather(unit)
     console.log(weatherData)
 
     const unitBtn = document.createElement("button")
+    unitBtn.id = "unitBtn"
+
     if (unit == "metric") {
-        unitBtn.value = 1
         unitBtn.textContent = "°C"
     } else {
-        unitBtn.value = 0
         unitBtn.textContent = "°F"
     }
-    unitBtn.addEventListener("toggle", () => {
-        if (unitBtn.value == 1) {
+
+    unitBtn.addEventListener("click", () => {
+        if (unitBtn.textContent === "°C") {
             unitBtn.textContent = "°F"
-            unitBtn.value = 0
             displayWeather("us")
+        } else {
+            unitBtn.textContent = "°C"
+            displayWeather("metric")
         }
     })
 
