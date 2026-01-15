@@ -8,7 +8,7 @@ body {
   display: grid;
   height: 100vh;
   grid-template-rows: 1fr 10fr;
-  background-color: slateblue;
+  background-color: darkslateblue;
 }
 
 nav {
@@ -54,7 +54,7 @@ img {
 
 .container {
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 2rem auto;
   text-align: center;
 }
@@ -62,7 +62,7 @@ img {
 #unitBtn {
   all: unset;
   color: white;
-  background-color: cornflowerblue;
+  background-color: slateblue;
   border:2px solid;
   font-size: 2rem;
   padding: .5rem 2rem;
@@ -71,6 +71,7 @@ img {
 }
 
 .place {
+  font-size: 3rem;
   font-weight: bold;
 }
 
