@@ -8,30 +8,32 @@ let currentUnit = "metric"
 async function updateWeather() {
   try {
     const data = await getWeather(currentPlace, currentUnit)
-    const unit = currentUnit === "metric" ? "C°" : "F°"
+    const unit = currentUnit === "metric" ? "°C" : "°F"
     displayWeather(data, unit)
-  } catch(err) {
+  } catch (err) {
     alert(err.message)
   }
 }
 
 document.addEventListener("click", (e) => {
-  if(e.target.id === "unitBtn") {
+  if (e.target.id === "unitBtn") {
     currentUnit = currentUnit === "metric" ? "us" : "metric"
     updateWeather()
   }
 })
 
 const searchBar = document.querySelector("#searchBar")
-const handleSearch = () => {
+const searchWeather = () => {
   if (searchBar.value.trim() !== "") {
     currentPlace = searchBar.value
+      .split(/[ -]/).map(w => w.charAt(0)
+        .toUpperCase() + w.slice(1)).join(" ")
     searchBar.value = ""
     updateWeather()
   }
 }
 
-document.querySelector("#searchBtn").addEventListener("click", handleSearch)
-searchBar.addEventListener("keydown", (e) => e.key === "Enter" && handleSearch())
+document.querySelector("#searchBtn").addEventListener("click", searchWeather)
+searchBar.addEventListener("keydown", (e) => e.key === "Enter" && searchWeather())
 
 updateWeather()
