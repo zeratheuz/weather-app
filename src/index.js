@@ -1,14 +1,37 @@
 import "./style.css"
+import { getWeather } from "./getWeather.js";
 import { displayWeather } from "./displayWeather.js";
 
-displayWeather()
+let currentPlace = "Texas"
+let currentUnit = "metric"
 
-const searchBar = document.querySelector("#searchBar")
-const searchBtn = document.querySelector("#searchBtn")
+async function updateWeather() {
+  try {
+    const data = await getWeather(currentPlace, currentUnit)
+    const unit = currentUnit === "metric" ? "C°" : "F°"
+    displayWeather(data, unit)
+  } catch(err) {
+    alert(err.message)
+  }
+}
 
-searchBar.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    displayWeather()
+document.addEventListener("click", (e) => {
+  if(e.target.id === "unitBtn") {
+    currentUnit = currentUnit === "metric" ? "us" : "metric"
+    updateWeather()
   }
 })
-searchBtn.addEventListener("click", () => displayWeather())
+
+const searchBar = document.querySelector("#searchBar")
+const handleSearch = () => {
+  if (searchBar.value.trim() !== "") {
+    currentPlace = searchBar.value
+    searchBar.value = ""
+    updateWeather()
+  }
+}
+
+document.querySelector("#searchBtn").addEventListener("click", handleSearch)
+searchBar.addEventListener("keydown", (e) => e.key === "Enter" && handleSearch())
+
+updateWeather()
