@@ -8,7 +8,7 @@ body {
   display: grid;
   height: 100vh;
   grid-template-rows: 1fr 10fr;
-  background-color: darkslateblue;
+  background-color: seagreen;
 }
 
 nav {
@@ -62,12 +62,17 @@ img {
 #unitBtn {
   all: unset;
   color: white;
-  background-color: slateblue;
-  border:2px solid;
+  background-color: rgb(40, 110, 70);
+  border: 2px solid;
   font-size: 2rem;
   padding: .5rem 2rem;
   border-radius: 30px;
   margin: 1rem;
+  cursor: pointer;
+}
+
+#unitBtn:hover {
+  background-color: rgb(20, 100, 50);
 }
 
 .place {
@@ -76,7 +81,16 @@ img {
 }
 
 .weather {
+  gap: 1rem;
+  display: flex;
   font-size: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 7rem;
+  height: 7rem;
 }
 
 @media (max-width: 700px) {
