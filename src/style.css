@@ -25,6 +25,15 @@ img {
   height: 3rem;
 }
 
+button {
+  all: unset;
+  color: white;
+  cursor: pointer;
+  padding: .5rem 2rem;
+  border-radius: 30px;
+  background-color: white;
+}
+
 .logo {
   gap: 1rem;
   display: flex;
@@ -43,13 +52,16 @@ img {
 }
 
 .search-bar #searchBar {
+  all: unset;
   font-size: 20px;
   padding: 0 1rem;
-  width: clamp(1rem, 30vw, 30rem)
+  border-radius: 30px;
+  background-color: white;
+  width: clamp(1rem, 30vw, 30rem);
 }
 
 .search-bar #searchBtn {
-  padding: .5rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .container {
@@ -60,15 +72,9 @@ img {
 }
 
 #unitBtn {
-  all: unset;
-  color: white;
-  background-color: rgb(40, 110, 70);
-  border: 2px solid;
-  font-size: 2rem;
-  padding: .5rem 2rem;
-  border-radius: 30px;
   margin: 1rem;
-  cursor: pointer;
+  font-size: 2rem;
+  background-color: rgb(40, 110, 70);
 }
 
 #unitBtn:hover {
