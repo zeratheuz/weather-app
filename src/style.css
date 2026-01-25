@@ -7,6 +7,7 @@
 body {
   display: grid;
   height: 100vh;
+  overflow: hidden;
   grid-template-rows: 1fr 10fr;
   background-color: seagreen;
 }
@@ -16,6 +17,7 @@ nav {
   width: 100%;
   padding: 1rem;
   display: flex;
+  overflow: hidden;
   align-items: center;
   justify-content: space-between;
 }
@@ -26,7 +28,7 @@ img {
 }
 
 button {
-  all: unset;
+  border: none;
   color: white;
   cursor: pointer;
   padding: .5rem 2rem;
@@ -45,37 +47,44 @@ button {
   width: max-content;
 }
 
-.search-bar {
+.search {
+  flex: 1;
   gap: 1rem;
   display: flex;
-  max-width: 50rem;
+  max-width: 25rem;
 }
 
-.search-bar #searchBar {
-  all: unset;
-  font-size: 20px;
+.search #searchBar {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  font-size: 1.5rem;
   padding: 0 1rem;
+  max-width: 25rem;
   border-radius: 30px;
   background-color: white;
-  width: clamp(1rem, 30vw, 30rem);
 }
 
-.search-bar #searchBtn {
+.search #searchBtn {
   padding: 1rem 1rem;
 }
 
-.search-bar #searchBtn:hover {
+.search #searchBtn:hover {
   background-color: rgb(230, 230, 230);
 }
 
 .blank {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
   margin: 1px auto;
+  align-items: start;
+  justify-content: center;
 }
 
 .container {
-  color: white;
-  margin: 1rem;
   display: flex;
+  color: white;
   font-size: 2rem;
   text-align: center;
   padding: 1rem 2rem;
@@ -121,24 +130,31 @@ button {
 
 @media (max-width: 700px) {
 
+  .container,
+  .search {
+    width: 95%;
+  }
+
   .logo h2 {
     display: none;
   }
 
-  .search-bar #searchBar {
-    width: clamp(1rem, 60vw, 50rem)
-  }
-
-  .container {
-    font-size: 2rem;
+  .search #searchBar {
+    width: 1rem;
   }
 
   .place {
+    font-size: 2.2rem;
     font-weight: bold;
   }
 
   .weather {
+    gap: unset;
     font-size: 5rem;
+  }
+
+  .details {
+    font-size: 1.8rem;
   }
 
 }

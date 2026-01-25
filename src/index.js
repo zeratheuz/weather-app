@@ -2,7 +2,7 @@ import "./style.css"
 import { getWeather } from "./getWeather.js";
 import { displayWeather } from "./displayWeather.js";
 
-let currentPlace = "Texas"
+let currentPlace = "Watermelon"
 let currentUnit = "metric"
 
 async function updateWeather() {
